@@ -1,0 +1,32 @@
+h1. London Clojure Dojo
+
+h2. Travelling Salesman with Genetic Algorithms
+
+This is a variation of the "following Ruby Quiz":http://rubyquiz.com/quiz142.html.
+
+A Salesman has to visit a number of cities. Each city is connected to every other city. It takes a fixed number of hours to go from one city to another.
+
+The Salesman wants to visit each city one and complete the trip as quickly as possibly.
+
+h2. Using Genetic Algorithims to solve the problem
+
+In the interest of time the first cut solution should be very simple.
+
+The genetic code should represent a set of routes between cities.
+
+Only two algorithims are in competition the parent and the child.
+
+The fitness function should check that each city is visited only once and the fitness value is simply the total time to complete the trip.
+
+It should be possible to specify the following termination conditions:
+
+* a number of generations
+* a number of generations without improvement
+* a set fitness value
+** bonus: time elapsed since the program started
+
+h2. What is the goal of the dojo?
+
+The main goal of the dojo will be continuing to learn about the use of tuples in Clojure as well as analysing a problem and breaking it down into functions.
+
+There is also some global state in terms of the cancellation of the calculations.
