@@ -9,6 +9,9 @@
 
 routes
 
+(defn route-costs [rs]
+  (map (fn [r] (routes r)) rs))
+
 (defn
 #^{
   :doc "Calculates the cost of a given route"
@@ -18,16 +21,17 @@ routes
   cost [route] 
     (reduce + (route-costs route)))
 
-(defn route-costs [rs]
-  (map (fn [r] (routes r)) rs))
+
 
 ;(reduce + (route-costs ["ab" "bc"]))
 
 
-(defn first-connection-to [s]
+(defn first-connection-to [ a ]
 (key 
 (first
-(filter (fn [keyval] (= (first (key keyval)) \a)) routes))))
+(filter (fn [keyval] (= a (first (key keyval)))) routes))))
+
+(first-connection-to \a)
 
 (defn plan-route [start end]
    (if (routes (str start end))
@@ -57,6 +61,7 @@ routes
 (assert (= 6 (cost ["ac" "cb"])))
 (assert (= 21 (cost ["cd" "dc" "ca"])))
 (assert (= 23 (cost ["cd" "dc" "ca" "ab"])))
+
 
 
 
